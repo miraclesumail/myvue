@@ -1,0 +1,42 @@
+$icon:"assets/img/";
+
+@mixin icon($name,$w:0.56rem,$h:0.56rem){
+    display: block;
+    width:$w;
+    height:$h;
+    overflow: hidden;
+    &:after{
+        display: block;
+        position: relative;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left:0;
+        background-image:url($icon+$name);
+        background-repeat: no-repeat;
+        background-position:center;
+        background-size:auto 100%;
+    }
+}
+
+@mixin filter($c:#fff,$w:0.56rem,$h:0.56rem){
+    width:$w;
+    height:$h;
+    &:after{
+        position: relative;
+        height: 200%;
+        background-position:center center;
+        background-size:auto 50%;
+        top: -150%;
+        filter:drop-shadow(0 $h 0 $c);
+    } 
+}
+
+#app{
+    .icon_discount{
+        @include icon("discount.png") ;
+        @include filter(#e36b60,0.64rem,0.64rem); 
+    }
+
+
+}    
