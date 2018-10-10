@@ -198,7 +198,7 @@
                 ctx.stroke();
                 ctx.fill();
             },
-
+             //ff
             draw(ctx, offset, style){
                 const points = [];    
                 const startX = 0
